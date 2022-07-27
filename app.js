@@ -27,12 +27,6 @@ const customMiddleware = (req,res,next)=>{
   next()
 }
 
-
-app.get("/",(req,res)=>{
-  console.log("home");
-  res.send("hellooo");
-})
-
 if(process.env.NODE_ENV==="production"){
   app.use(express.static("client/build"))
   const path = require("path")
