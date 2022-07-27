@@ -11,7 +11,7 @@ import UserProfile from "./components/screens/UserProfile"
 import MyFriendsPosts from "./components/screens/FriendsUserPosts"
 import {reducer,initialState} from "./reducers/userReducer"
 
-export const UserContext = createContext()
+export const UserContext = createContext();
 
 const Routing =()=>{
   const navigate = useNavigate()

@@ -33,7 +33,7 @@ const Home = ()=>{
     .then(result=>{
       //console.log(result);
       const newData = data.map(item=>{
-        if(item._id==result._id){
+        if(item._id===result._id){
           return result
         } else{
           return item
@@ -59,7 +59,7 @@ const Home = ()=>{
     .then(result=>{
       //console.log(result);
       const newData = data.map(item=>{
-        if(item._id==result._id){
+        if(item._id===result._id){
           return result
         } else{
           return item
@@ -86,7 +86,7 @@ const Home = ()=>{
     .then(result=>{
       //console.log(result);
       const newData = data.map(item=>{
-        if(item._id==result._id){
+        if(item._id===result._id){
           return result
         } else{
           return item
@@ -139,7 +139,7 @@ const Home = ()=>{
 
           <div className="card home-card" key={item._id}>
             <h5 className="profile-h"><Link to={item.postedBy._id!==state._id?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link>
-            {item.postedBy._id==state._id
+            {item.postedBy._id===state._id
             &&
             <i className="material-icons" style={{float:"right"}} onClick={()=>deletePost(item._id)}>delete</i>
             }
@@ -166,7 +166,7 @@ const Home = ()=>{
               {item.comments.map(record=>{
                 return(
                   <h6 key={record._id}>
-                  {record.postedBy._id==state._id
+                  {record.postedBy._id===state._id
                   &&
                   //onClick={()=>deleteComment(record._id)}
                   <i className="material-icons" >delete</i>
