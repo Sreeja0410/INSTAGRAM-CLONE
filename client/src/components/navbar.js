@@ -16,23 +16,22 @@ const NavBar = ()=>{
     if(state){
       return [
         <li key="1"><i data-target="modal1" className="large material-icons modal-trigger" style={{color:"black"}}>search</i></li>,
-        <li key="2"><Link to="/profile">Profile</Link></li>,
+        <li key="2"><Link to="/profile"><i className="large material-icons" style={{color:"black"}}>person</i></Link></li>,
         <li key="3"><Link to="/createpost">Create Post</Link></li>,
-        <li key="4"><Link to="/myfriendsposts">My Friends</Link></li>,
-        <li key="5">
-        <button className="btn #e53935 red darken-1"
+        <li key="4">
+        <i className="large material-icons" style={{color:"black"}}
         onClick={()=>{
           localStorage.clear()
           dispatch({type:"CLEAR"})
           navigate("/signin")
         }}
-        >Logout</button>
+        >directions_run</i>
         </li>
       ]
     } else{
       return [
-        <li key="6"><Link to="/signin">Login</Link></li>,
-        <li key="7"><Link to="/signup">Signup</Link></li>
+        <li key="5"><Link to="/signin">Login</Link></li>,
+        <li key="6"><Link to="/signup">Signup</Link></li>
       ]
 
     }

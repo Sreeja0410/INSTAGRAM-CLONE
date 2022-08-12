@@ -166,11 +166,6 @@ const Home = ()=>{
               {item.comments.map(record=>{
                 return(
                   <h6 key={record._id}>
-                  {record.postedBy._id===state._id
-                  &&
-                  //onClick={()=>deleteComment(record._id)}
-                  <i className="material-icons" >delete</i>
-                  }
 
                   <span><b>{record.postedBy.name}</b></span> : {record.text}</h6>
                 )
