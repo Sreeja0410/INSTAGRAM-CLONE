@@ -19,13 +19,13 @@ const NavBar = ()=>{
         <li key="2"><Link to="/profile"><i className="large material-icons" style={{color:"black"}}>person</i></Link></li>,
         <li key="3"><Link to="/createpost">Create Post</Link></li>,
         <li key="4">
-        <i className="large material-icons" style={{color:"black"}}
+        <img src="images/shutdown.png" alt="logout"
         onClick={()=>{
           localStorage.clear()
           dispatch({type:"CLEAR"})
           navigate("/signin")
         }}
-        >directions_run</i>
+         />
         </li>
       ]
     } else{

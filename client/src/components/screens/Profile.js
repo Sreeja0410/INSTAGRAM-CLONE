@@ -69,7 +69,7 @@ const Profile = ()=>{
           <img className="profile-img" src={state?state.pic:"loading"} alt="" />
 
         </div>
-        <div>
+        <div className="profile-head">
           <h4>{state?state.name:"loading"}</h4>
           <div className="profile-text">
             <h6>{mypics.length} posts</h6>

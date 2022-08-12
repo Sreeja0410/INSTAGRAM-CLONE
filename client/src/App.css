@@ -47,12 +47,23 @@ a{
   width:160px;
   height:160px;
   border-radius:80px;
+  margin-top: 20px;
 }
 
 .profile-text{
   display: flex;
   justify-content: space-between;
   width: 108%;
+}
+
+.profile-head{
+  width: 40%;
+}
+
+@media (max-width: 600px){
+  div.profile-head{
+    width: 100%;
+  }
 }
 
 .gallery{
