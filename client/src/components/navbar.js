@@ -19,13 +19,13 @@ const NavBar = ()=>{
         <li key="2"><Link to="/profile"><i className="large material-icons" style={{color:"black"}}>person</i></Link></li>,
         <li key="3"><Link to="/createpost">Create Post</Link></li>,
         <li key="4">
-        <img src="images/out.webp" alt="logout"
-        onClick={()=>{
-          localStorage.clear()
-          dispatch({type:"CLEAR"})
-          navigate("/signin")
-        }}
-         />
+         <i className="fas fa-sign-out-alt"
+         onClick={()=>{
+           localStorage.clear()
+           dispatch({type:"CLEAR"})
+           navigate("/signin")
+         }}
+         ></i>
         </li>
       ]
     } else{
@@ -49,7 +49,9 @@ const NavBar = ()=>{
       })
     }).then(res=>res.json())
     .then(results=>{
+      console.log(results);
       setUserDetails(results.user)
+      setSearch("")
     })
   }
 
@@ -74,9 +76,8 @@ const NavBar = ()=>{
          <ul className="collection">
          {userDetails.map(item=>{
            return <Link to={item._id !== state._id ? "/profile/"+item._id : "/profile"} onClick={()=>{
-             setSearch("")
              M.Modal.getInstance(searchModal.current).close()
-
+             setSearch("")
            }}><li className="collection-item">{item.name}</li></Link>
          })}
          </ul>
