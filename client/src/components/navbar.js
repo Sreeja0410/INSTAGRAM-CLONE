@@ -18,20 +18,17 @@ const NavBar = ()=>{
         <li key="1"><i data-target="modal1" className="large material-icons modal-trigger" style={{color:"black"}}>search</i></li>,
         <li key="2"><Link to="/profile"><i className="large material-icons" style={{color:"black"}}>person</i></Link></li>,
         <li key="3"><Link to="/createpost">Create Post</Link></li>,
-        <li key="4">
-         <i className="fas fa-sign-out-alt"
-         onClick={()=>{
-           localStorage.clear()
-           dispatch({type:"CLEAR"})
-           navigate("/signin")
-         }}
-         ></i>
-        </li>
+        <li key="4"><img onClick={()=>{
+          localStorage.clear()
+          dispatch({type:"CLEAR"})
+          navigate("/signin")
+        }} src="out.webp" className="logout-img" alt="a" /></li>
       ]
     } else{
       return [
         <li key="5"><Link to="/signin">Login</Link></li>,
-        <li key="6"><Link to="/signup">Signup</Link></li>
+        <li key="6"><Link to="/signup">Signup</Link></li>,
+
       ]
 
     }
@@ -78,12 +75,17 @@ const NavBar = ()=>{
            return <Link to={item._id !== state._id ? "/profile/"+item._id : "/profile"} onClick={()=>{
              M.Modal.getInstance(searchModal.current).close()
              setSearch("")
+             setUserDetails([])
            }}><li className="collection-item">{item.name}</li></Link>
          })}
          </ul>
        </div>
        <div className="modal-footer">
-         <button className="modal-close waves-effect waves-green btn-flat" onClick={()=>setSearch('')}>close</button>
+         <button className="modal-close waves-effect waves-green btn-flat"
+         onClick={
+           ()=>{
+             setSearch('')
+         setUserDetails([])}}>close</button>
        </div>
      </div>
   </nav>
