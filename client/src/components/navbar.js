@@ -72,7 +72,7 @@ const NavBar = ()=>{
          />
          <ul className="collection">
          {userDetails.map(item=>{
-           return <Link to={item._id !== state._id ? "/profile/"+item._id : "/profile"} onClick={()=>{
+           return <Link to={"/profile/"+item._id } onClick={()=>{
              M.Modal.getInstance(searchModal.current).close()
              setSearch("")
              setUserDetails([])

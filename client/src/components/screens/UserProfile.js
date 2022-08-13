@@ -90,7 +90,7 @@ const unfollowUser = ()=>{
           <div>
             <img className="profile-img" src={userProfile.user.pic} alt=""/>
           </div>
-          <div>
+          <div className="profile-head">
             <h4>{userProfile.user.name}</h4>
             <div className="profile-text">
               <h6>{userProfile.posts.length} posts</h6>
