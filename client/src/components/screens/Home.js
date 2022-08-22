@@ -6,7 +6,7 @@ const Home = ()=>{
 
   const [data,setData] = useState([])
   const {state,dispatch} = useContext(UserContext)
-  console.log(state);
+  //console.log(state);
   useEffect(()=>{
     fetch("/allpost",{
       headers:{
@@ -134,8 +134,6 @@ const Home = ()=>{
   return (
     <div className="home">
     {
-      data?
-      console.log(data);
       data.map(item=>{
         return(
 
@@ -185,7 +183,6 @@ const Home = ()=>{
           </div>
         )
       })
-      :""
 
     }
 
