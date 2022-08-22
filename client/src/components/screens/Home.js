@@ -134,6 +134,7 @@ const Home = ()=>{
   return (
     <div className="home">
     {
+      data?
       data.map(item=>{
         return(
 
@@ -187,6 +188,8 @@ const Home = ()=>{
 
     </div>
   )
+  :
+  <div></div>
 }
 
 export default Home
