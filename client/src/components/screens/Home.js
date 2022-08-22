@@ -134,6 +134,7 @@ const Home = ()=>{
   return (
     <div className="home">
     {
+      console.log(data);
       data?
       data.map(item=>{
         return(
@@ -185,7 +186,7 @@ const Home = ()=>{
         )
       })
       :""
-      
+
     }
 
     </div>
