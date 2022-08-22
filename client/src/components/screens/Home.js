@@ -134,8 +134,8 @@ const Home = ()=>{
   return (
     <div className="home">
     {
-      console.log(data);
       data?
+      console.log(data);
       data.map(item=>{
         return(
 
