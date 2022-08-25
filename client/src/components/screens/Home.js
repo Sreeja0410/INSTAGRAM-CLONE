@@ -134,10 +134,11 @@ const Home = ()=>{
   return (
     <div className="home">
     {
-      console.log(item);
-      console.log(state);
+
       data.map(item=>{
         return(
+          console.log(item);
+          console.log(state);
           state &&
           <div className="card home-card" key={item._id}>
             <h5 className="profile-h"><Link to={item.postedBy._id!==state._id?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link>
