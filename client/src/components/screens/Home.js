@@ -114,31 +114,15 @@ const Home = ()=>{
     })
   }
 
-  const deleteComment = (commentid)=>{
-    fetch("/deletecomment/"+commentid,{
-      method:"delete",
-      headers:{
-        Authorization:"Bearer "+localStorage.getItem("jwt")
-      }
-    }).then(res=>res.json())
-    .then(result=>{
-
-      // const newData = data.filter(item=>{
-      //   return item._id !== result._id
-      // })
-      // setData(newData)
-    })
-  }
-
 
   return (
     <div className="home">
     {
-
       data.map(item=>{
+        console.log(item);
+        console.log(state);
         return(
-          console.log(item);
-          console.log(state);
+
           state &&
           <div className="card home-card" key={item._id}>
             <h5 className="profile-h"><Link to={item.postedBy._id!==state._id?"/profile/"+item.postedBy._id:"/profile"}>{item.postedBy.name}</Link>
